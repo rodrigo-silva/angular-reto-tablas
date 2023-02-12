@@ -2,7 +2,28 @@
   visibility: hidden;
 }
 
-span {
+span.number {
   margin: 25px;
   font-size: 100px;
+}
+span.star {
+  color: yellow;
+  font-size: 50px;
+}
+
+button {
+  display: block;
+  margin: 50px 0px;
+}
+
+.mal {
+  background-color: red;
+}
+
+.bien {
+  background-color: green;
+}
+.mensaje {
+  padding: 15px;
+  font-weight: 800;
 }

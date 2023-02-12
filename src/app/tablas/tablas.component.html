@@ -1,10 +1,25 @@
 <div>
-  <span [class.hidden]="escondidoIndex == 0">{{ a }}</span
-  >X <span [class.hidden]="escondidoIndex == 1">{{ b }}</span
-  >=
-  <span [class.hidden]="escondidoIndex == 2">{{ c }}</span>
+  <span class="number" [class.hidden]="escondidoIndex == 0">{{ a }}</span>
+  X
+  <span class="number" [class.hidden]="escondidoIndex == 1">{{ b }}</span>
+  =
+  <span class="number" [class.hidden]="escondidoIndex == 2">{{ c }}</span>
 </div>
 <div>Respuesta:</div>
-<input [(ngModel)]="respuesta" #respuesta />
+<input [(ngModel)]="respuesta" #coso (ngModelChange)="onKey($event)" />
 <button (click)="dameOtra()">Dame otra, Peludo</button>
-<div></div>
+
+Puntuacion
+<span *ngFor="let i of [].constructor(contestadasBien)" class="star"
+  >&#x2606;</span
+>
+
+<div
+  class="mensaje"
+  [ngClass]="{
+    bien: respuesta && respuesta == correcta,
+    mal: respuesta && respuesta != correcta
+  }"
+>
+  {{ mensaje }}
+</div>
