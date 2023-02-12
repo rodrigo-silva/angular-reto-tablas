@@ -1,0 +1,10 @@
+<div>
+  <span [class.hidden]="escondidoIndex == 0">{{ a }}</span
+  >X <span [class.hidden]="escondidoIndex == 1">{{ b }}</span
+  >=
+  <span [class.hidden]="escondidoIndex == 2">{{ c }}</span>
+</div>
+<div>Respuesta:</div>
+<input [(ngModel)]="respuesta" #respuesta />
+<button (click)="dameOtra()">Dame otra, Peludo</button>
+<div></div>

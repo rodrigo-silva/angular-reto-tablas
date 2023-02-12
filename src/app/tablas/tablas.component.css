@@ -1,0 +1,8 @@
+.hidden {
+  visibility: hidden;
+}
+
+span {
+  margin: 25px;
+  font-size: 100px;
+}
