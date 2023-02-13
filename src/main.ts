@@ -12,16 +12,20 @@ import { AppModule } from './app/app.module';
 })
 export class App implements OnInit {
   tablas: Array<number>;
+  toggle = false;
 
   ngOnInit(): void {
     this.tablas = [];
-    const day = new Date().getDay() + 1;
+    const day = new Date().getDay();
     if (day < 5) {
       this.tablas.push(day * 2);
       this.tablas.push(day * 2 + 1);
     } else {
       this.fillRandom();
     }
+  }
+  toggleDesafio() {
+    this.toggle = true;
   }
 
   /**

@@ -1,2 +1,6 @@
-<app-tablas [tablas]="tablas"></app-tablas>
-<app-desafio [tablasDeNumeros]="tablas"></app-desafio>
+<app-tablas [tablas]="tablas" *ngIf="!toggle"></app-tablas>
+<button *ngIf="!toggle" (click)="toggleDesafio()" style="margin: 10px">
+  listo para el desafio??
+</button>
+
+<app-desafio [tablasDeNumeros]="tablas" *ngIf="toggle"></app-desafio>

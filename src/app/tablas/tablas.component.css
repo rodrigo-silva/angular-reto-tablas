@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  font-size: x-large;
 }
 .container section {
   flex-grow: 1;
@@ -10,7 +11,7 @@ input {
 }
 
 .bien {
-  color: green;
+  color: rgb(3, 91, 255);
 }
 .mal {
   color: red;
