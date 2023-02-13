@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-tablas',
@@ -6,7 +6,17 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./tablas.component.css'],
 })
 export class TablasComponent implements OnInit {
+  @Input() tablas: Array<number>;
+  respuestas: Map<number, any>;
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.respuestas = new Map();
+    this.respuestas.set(this.tablas[0], []);
+    this.respuestas.set(this.tablas[1], []);
+  }
+
+  unaRespuesta(tabla, numero, $event) {
+    this.respuestas.get(tabla)[numero] = $event.target.value;
+    console.log(this.respuestas.get(tabla));
   }
 }

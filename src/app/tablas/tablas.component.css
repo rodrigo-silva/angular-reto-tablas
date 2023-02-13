@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+}
+.container section {
+  flex-grow: 1;
+}
+
+input {
+  width: 50px;
+}
