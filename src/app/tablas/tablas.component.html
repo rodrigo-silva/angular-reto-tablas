@@ -1,6 +1,16 @@
 <div class="container">
   <section>
-    <div *ngFor="let x of [].constructor(10); index as i">
+    <div
+      *ngFor="let x of [].constructor(10); index as i"
+      [ngClass]="{
+        bien:
+          respuestas.get(tablas[0])[i + 1] &&
+          respuestas.get(tablas[0])[i + 1] == tablas[0] * (i + 1),
+        mal:
+          respuestas.get(tablas[0])[i + 1] &&
+          respuestas.get(tablas[0])[i + 1] != tablas[0] * (i + 1)
+      }"
+    >
       {{ tablas[0] }} X {{ i + 1 }} =
       <input (keyup)="unaRespuesta(tablas[0], i + 1, $event)" />
     </div>
