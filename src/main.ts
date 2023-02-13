@@ -15,7 +15,7 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     this.tablas = [];
-    const day = new Date().getDay();
+    const day = new Date().getDay() + 1;
     if (day < 5) {
       this.tablas.push(day * 2);
       this.tablas.push(day * 2 + 1);

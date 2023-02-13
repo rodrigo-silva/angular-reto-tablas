@@ -1,24 +1,18 @@
 <div class="container">
-  <section>
+  <section *ngFor="let x of [].constructor(2); index as j">
     <div
       *ngFor="let x of [].constructor(10); index as i"
       [ngClass]="{
         bien:
-          respuestas.get(tablas[0])[i + 1] &&
-          respuestas.get(tablas[0])[i + 1] == tablas[0] * (i + 1),
+          respuestas.get(tablas[j])[i + 1] &&
+          respuestas.get(tablas[j])[i + 1] == tablas[j] * (i + 1),
         mal:
-          respuestas.get(tablas[0])[i + 1] &&
-          respuestas.get(tablas[0])[i + 1] != tablas[0] * (i + 1)
+          respuestas.get(tablas[j])[i + 1] &&
+          respuestas.get(tablas[j])[i + 1] != tablas[j] * (i + 1)
       }"
     >
-      {{ tablas[0] }} X {{ i + 1 }} =
-      <input (keyup)="unaRespuesta(tablas[0], i + 1, $event)" />
-    </div>
-  </section>
-
-  <section>
-    <div *ngFor="let x of [].constructor(10); index as i">
-      {{ tablas[1] }} X {{ i + 1 }} = <input />
+      {{ tablas[j] }} X {{ i + 1 }} =
+      <input (keyup)="unaRespuesta(tablas[j], i + 1, $event)" />
     </div>
   </section>
 </div>
