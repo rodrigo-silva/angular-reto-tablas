@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-desafio',
@@ -7,6 +7,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class DesafioComponent implements OnInit {
   @ViewChild('coso') respuestaElement: ElementRef;
+  @Input() tablasDeNumeros: Array<number>;
+
   a: number;
   b: number;
   c: number;
@@ -74,7 +76,7 @@ export class DesafioComponent implements OnInit {
 
   private resetNumbers() {
     this.escondidoIndex = Math.floor(3 * Math.random());
-    this.a = Math.floor(9 * Math.random()) + 1;
+    this.a = this.tablasDeNumeros[Math.floor(this.tablasDeNumeros.length * Math.random())];
     this.b = Math.floor(9 * Math.random()) + 1;
     this.c = this.a * this.b;
   }
