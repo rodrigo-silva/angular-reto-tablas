@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-tablas',
-  templateUrl: './tablas.component.html',
-  styleUrls: ['./tablas.component.css'],
+  selector: 'app-desafio',
+  templateUrl: './desafio.component.html',
+  styleUrls: ['./desafio.component.css'],
 })
-export class TablasComponent implements OnInit {
+export class DesafioComponent implements OnInit {
   @ViewChild('coso') respuestaElement: ElementRef;
   a: number;
   b: number;
